@@ -41,6 +41,7 @@ export const StateContextProvider = ({children}) => {
     }))
 
     return parseCampaigns;
+    // console.log(parseCampaigns, "from react context")
   }
 
   return (
