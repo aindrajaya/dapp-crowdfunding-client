@@ -19,6 +19,14 @@ const DisplayCampaigns = ({title, isLoading, campaigns}) => {
             You have not created any campaigns yet
           </p>
         )}
+
+        {!isLoading && campaigns.length > 0 && campaigns.map((campaign) => 
+          <CampaignCard 
+            key={campaign.id}
+            {...campaign}
+            handleClick={() => handleNavigate(campaign)}
+          />
+        )}
       </div>
     </div>
   )
