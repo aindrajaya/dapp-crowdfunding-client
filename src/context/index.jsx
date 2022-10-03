@@ -44,9 +44,17 @@ export const StateContextProvider = ({children}) => {
     // console.log(parseCampaigns, "from react context")
   }
 
+  const getUserCampaigns = async() => {
+    const allCampaigns = await getCampaigns();
+
+    const fileteredCampaigns = allCampaigns.filter((campaign) => campaign.owner === address)
+
+    return fileteredCampaigns;
+  }
+
   return (
     <StateContext.Provider
-      value={{address, contract, connect, createCampaign:publishCampaign, getCampaigns}}
+      value={{address, contract, connect, createCampaign:publishCampaign, getCampaigns, getUserCampaigns}}
     >
       {children}
     </StateContext.Provider>
