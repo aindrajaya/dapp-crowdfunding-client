@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { loader } from '../assets';
+import {CampaignCard} from './'
 
 const DisplayCampaigns = ({title, isLoading, campaigns}) => {
   const navigate = useNavigate()
@@ -24,11 +25,11 @@ const DisplayCampaigns = ({title, isLoading, campaigns}) => {
             You have not created any campaigns yet
           </p>
         )}
-
+ 
         {!isLoading && campaigns.length > 0 && campaigns.map((campaign) => 
           <CampaignCard 
             key={campaign.id}
-            {...campaign}
+            {...campaign} 
             handleClick={() => handleNavigate(campaign)}
           />
         )}
