@@ -28,7 +28,7 @@ const DisplayCampaigns = ({title, isLoading, campaigns}) => {
  
         {!isLoading && campaigns.length > 0 && campaigns.map((campaign) => 
           <CampaignCard 
-            key={campaign.id}
+            key={campaign.pId}
             {...campaign} 
             handleClick={() => handleNavigate(campaign)}
           />
@@ -38,4 +38,4 @@ const DisplayCampaigns = ({title, isLoading, campaigns}) => {
   )
 }
 
-export default DisplayCampaigns
+export default DisplayCampaigns;
